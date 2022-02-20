@@ -72,7 +72,7 @@ pub struct Events {
     pub description: String,
     pub last_modified: DateTime<Utc>,
     pub location: String,
-    pub sequence: u32,
+    pub sequence: i32,
     pub status: String,
     pub summary: String,
     pub transp: String,
@@ -192,7 +192,7 @@ impl Calendar {
                     even_temp.location = value_cal;
                 }
                 "SEQUENCE" => {
-                    even_temp.sequence = value_cal.parse::<u32>().unwrap();
+                    even_temp.sequence = value_cal.parse().unwrap();
                 }
                 "STATUS" => {
                     even_temp.status = value_cal;
